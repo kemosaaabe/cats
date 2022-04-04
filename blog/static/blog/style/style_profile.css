@@ -1,0 +1,28 @@
+/* Container  */
+
+.container {
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+}
+
+.container-inner h1 {
+	color: #634315;
+	font-family: 'Poiret One', cursive;
+}
+
+.container-inner p {
+	color: #634315;
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.container-inner a {
+	text-decoration: none;
+}
+
+.container-inner a:hover {
+	transition: .2s;
+	color: #B1A89B;
+}

@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style/log.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+<div class="wrapper">
+	<div class="enter">
+	<h1>Вход</h1>
+	{% if user.is_authenticated %}
+		<p>Вы уже вошли на сайт</p>
+	</div>
+	<div class="create">
+	{% else %}
+		<form method="post">
+			{% csrf_token %}
+
+			{% for error in form.non_field_errors %}
+				<p class="error">{{ error }}</p>
+			{% endfor %}
+			{% for field in form.visible_fields %}
+				<div class="field">
+					<div>{{ field.label_tag }}</div>
+					<div>{{ field }}</div>
+				</div>
+			{% endfor %}
+			<input type="submit" value="Войти" class="btn">
+			<p class="reset">Забыли пароль? Восстановите его <a href="{% url 'pass_reset' %}" class="reset-link">здесь</a></p>
+			<p class="reset"><a href="{% url 'social:begin' 'vk-oauth2' %}" class="reset-link">Войти через ВКонтакте</a></p>
+		</form> 
+	</div>
+</div>
+{% endif %}
+{% endblock content %}

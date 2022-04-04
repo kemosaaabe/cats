@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style/style_cat.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<div class="wrapper">
+	<div class="cat-image">
+			<img src="../media/{{ cat.img }}">
+		</div>
+	<div class="box">
+		<h1>{{ cat.name }}</h1>
+		<p class="text">{{ cat.text }}</p>
+		<p class="author">Автор: {{ cat.author }}</p>
+	</div>
+</div>
+<div class="wrapper">
+	<a href="{% url 'edit_cat' cat_id=cat.pk %}"><input type="submit" value="Изменить" class="change"></a>
+	<a href="{% url 'delete_cat' cat_id=cat.pk %}"><input type="submit" value="Удалить" class="change"></a>
+</div>
+{% endblock content %}

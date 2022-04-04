@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style/style_profile.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+<div class="container">
+	<div class="container-inner">
+		<h1 class="name">Имя пользователя: {{ user.username }}</h1>
+		<p>Нажмите <a href="{% url 'password_change_form' %}">здесь</a>, если хотите изменить пароль</p>
+	</div>
+</div>
+
+{% endblock content %}

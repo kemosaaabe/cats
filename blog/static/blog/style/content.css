@@ -1,0 +1,33 @@
+/* Content  */
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+	display: grid;
+	grid-template: 1fr 1fr / 40% 40%;
+	justify-content: center;
+	justify-items: center;
+	grid-gap: 30px;
+	padding-top: 30px;
+}
+
+.cat-image img {
+	width: 300px;
+	height: auto;
+	border-radius: 7px;
+}
+
+.cat-image img:hover {
+	opacity: .8;
+	transition: .3s;
+}
+
+.box {
+	color: #B1A89B;
+	font-family: 'Poiret One', cursive;
+	text-align: center;
+}
+
+.box h2 {
+	margin-bottom: 10px;
+}

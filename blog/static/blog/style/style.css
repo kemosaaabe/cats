@@ -1,0 +1,73 @@
+/* Header */
+
+* {
+	margin, padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	background: url('../images/cats_bg.png');
+}
+
+header {
+	padding: 10px 10px 20px 10px;
+	color: #B1A89B;
+	font-family: 'Russo One', serif;
+	background: #ECDCC4;
+}
+
+header h1 {
+	text-align: center;
+	margin: 20px 10px 25px 10px;
+}
+
+/* Nav */
+
+header ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+	width: 50%;
+	margin: 0 auto;
+}
+
+header li {
+	margin-right: 50px;
+}
+
+header li a {
+	text-decoration: none;
+	color: inherit;
+}
+
+header li a:hover {
+	color: white;
+	transition: .2s;
+}
+
+.auth {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.reg {
+	text-decoration: none;
+	color: #B1A89B;
+	font-family: 'Russo One', serif;
+	margin-left: 10px;
+	
+}
+
+.reg:hover {
+	color: #fff;
+	transition: .2s;
+}
+
+
+

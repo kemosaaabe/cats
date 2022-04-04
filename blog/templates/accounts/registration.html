@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style/reg.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+	<h2>Долбоеб, выйди сначала</h1>
+	{% else %}
+	<div class="create">
+		<div class="create_inner">
+			<h1>Создание аккаунта</h1>
+			<form method="post">
+				{% csrf_token %}
+				
+				{% for field in user_form.visible_fields %}
+					<div class="field">
+						{% if field.errors %}
+							{% for error in field.errors %}
+								<p class="error">{{ error }}</p>
+							{% endfor %}
+						{% endif %}
+						<div>{{ field.label_tag }}</div>
+						<div>{{ field }}</div>
+					</div>
+				{% endfor %}
+				<p><input type="submit" value="Зарегаться" class="btn"></p>
+			</form>
+		</div>
+	</div>
+{% endif %}
+
+
+{% endblock content %}

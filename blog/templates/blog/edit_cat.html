@@ -1,0 +1,61 @@
+{% extends "blog/base.html" %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style/create_cat.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<div class="create">
+	<div class="create_inner">
+		<h1>Изменение котика</h1>
+		<form method='POST' enctype="multipart/form-data" class="post-form" spellcheck="false">
+			{% csrf_token %}
+			<div class="form-box">
+				{% if form.name.errors %}
+					{% for error in form.name.errors %}
+						<p class="error">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+				{{ form.name.label_tag }}
+				{{ form.name }}
+			</div>
+			<div class="form-box">
+				{{ form.age.label_tag }}
+				{{ form.age }}
+			</div>
+			<div class="form-box">
+				{{ form.text.label_tag }}
+				{{ form.text }}
+			</div>
+			<div class="form-box">
+				{{ form.breed.label_tag }}
+				{{ form.breed }}
+			</div>
+			<div>
+				{% if form.img.errors %}
+					{% for error in form.img.errors %}
+						<p class="error">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+				{{ form.img.label_tag }}
+				{{ form.img }}
+			</div>
+			<div class="form-box">
+				{% if form.captcha.errors %}
+					{% for error in form.captcha.errors %}
+						<p class="error">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+				{{ form.captcha.label_tag }}
+				{{ form.captcha }}
+			</div>
+			<div class="btn">
+				<input type="submit" value="Сохранить">
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock content %}

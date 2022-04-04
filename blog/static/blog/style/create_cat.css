@@ -1,0 +1,112 @@
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.create {
+	display: flex;
+	justify-content: center;
+}
+
+.create_inner {
+	padding-top: 40px;
+	width: 40%;
+
+}
+
+.create_inner h1 {
+	margin-bottom: 40px;
+	color: #634315;
+	font-family: 'Poiret One', cursive;
+	text-align: center;
+}
+
+.form-box {
+	margin-bottom: 20px;
+	color: #634315;
+	font-weight: bold;
+	font-family: 'Poiret One', cursive;
+}
+
+.error {
+	color: red;
+}
+
+.form-box label {
+	display: inline-block;
+	width: 100px;
+	vertical-align: top;
+}
+
+.form-box textarea {
+	resize: none;
+	padding: 5px 10px;
+	border-radius: 8px;
+	border: 1px solid #997540;
+	background: #F6E9D6;
+	color: #634315;
+	font-weight: bold;
+	font-family: 'Poiret One', cursive;
+	width: 400px;
+}
+
+.form-box input {
+	padding: 5px 10px;
+	border-radius: 8px;
+	width: 100px;
+	border: 1px solid #997540;
+	color: #634315;
+	background: #F6E9D6;
+	font-weight: bold;
+	font-family: 'Poiret One', cursive;
+}
+
+.form-box select {
+	padding: 5px 10px;
+	border-radius: 8px;
+	width: 150px;
+	border: 1px solid #997540;
+	color: #634315;
+	background: #F6E9D6;
+	font-weight: bold;
+	font-family: 'Poiret One', cursive;
+}
+
+
+.form-box option {
+	border-radius: 8px;
+}
+
+.form-box select:focus {
+	outline: none;
+}
+
+.form-box input:focus {
+	outline: none;
+}
+
+.form-box textarea:focus {
+	outline: none;
+}
+
+.btn input {
+	margin-top: 30px;
+	padding: 5px 10px;
+	border-radius: 8px;
+	width: 150px;
+	border: 1px solid #997540;
+	color: #634315;
+	background: #F6E9D6;
+	font-weight: bold;
+	font-family: 'Poiret One', cursive;
+	cursor: pointer;
+}
+
+.btn input:hover {
+	background: white;
+	transition: .2s;
+}

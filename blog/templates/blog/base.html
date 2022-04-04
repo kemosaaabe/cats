@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	{% block styles %}
+	{% endblock styles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/style/style.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Блог про котиков: Главная</title>
+</head>
+<body>
+	<header>
+		<h1>Добро пожаловать на сайт с котиками</h1>
+		<ul class="nav">
+			<li><a href="{% url 'start' %}">Главная</a></li>
+			{% if user.is_authenticated %}
+			<li><a href="{% url 'my_cats' %}">Ваши котики</a></li>
+			{% endif %}
+			{% if user.is_authenticated %}
+			<li><a href="{% url 'create_cat' %}">Добавить котика</a></li>
+			{% endif %}
+			{% if user.is_authenticated %}
+			<li><a href="{% url 'profile' %}">Профиль</a></li>
+			{% endif %}
+		</ul>
+	</header>
+	<div class="auth">
+		<a href="{% url 'login' %}" class="reg">Вход</a></li>
+		<a href="{% url 'register' %}" class="reg">Регистрация</a></li>
+		{% if user.is_authenticated %}
+		<a href="{% url 'logout' %}" class="reg">Выход</a></li>
+		{% endif %}
+	</div>
+	{% block content %}
+	{% endblock content %}
+</body>
+</html>

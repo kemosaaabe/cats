@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% load filtersandtags %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style/bbcode_static.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+<p>{{ cat.age|cur }}</p>
+
+<p>{% lst ', ' '1' '2' '3' '4' '5' %}</p>
+
+{% endblock content %}
