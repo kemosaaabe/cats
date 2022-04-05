@@ -5,7 +5,6 @@ from django import forms
 from django.forms.widgets import Select
 from .models import Cat, Breed
 from django.contrib.auth.models import User
-from captcha.fields import CaptchaField
 
 
 class CatForm(ModelForm):

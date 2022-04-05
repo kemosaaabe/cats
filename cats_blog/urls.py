@@ -21,7 +21,6 @@ from . import settings
 urlpatterns = [
     path('', include('blog.urls')),
     path('admin/', admin.site.urls),
-    path('captcha/', include('captcha.urls')),
     path('social/', include('social_django.urls', namespace='social'))
 ]
 
