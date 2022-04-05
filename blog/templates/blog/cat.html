@@ -13,7 +13,11 @@
 	<div class="box">
 		<h1>{{ cat.name }}</h1>
 		<p class="text">{{ cat.text }}</p>
+		{% if cat.author.first_name %}
+		<p class="author">Автор: {{ cat.author.first_name }}</p>
+		{% else %}
 		<p class="author">Автор: {{ cat.author }}</p>
+		{% endif %}
 	</div>
 </div>
 <div class="wrapper">
