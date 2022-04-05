@@ -22,13 +22,6 @@ class CatForm(ModelForm):
         'invalid_extension': 'Этот формат не поддерживается'
     })
 
-    def clean_age(self):
-        value = self.cleaned_data['age']
-        if value == 5:
-            raise ValidationError('Ну ты еблан')
-        else:
-            return value
-
     class Meta:
         model = Cat
         fields = ('name', 'age', 'text', 'breed', 'img')
