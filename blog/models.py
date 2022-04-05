@@ -40,7 +40,7 @@ class Cat(models.Model):
     class Meta:
         verbose_name = "Котик"
         verbose_name_plural = "Котики"
-        ordering = ['published']
+        ordering = ['-published']
 
 
 class Breed(models.Model):
